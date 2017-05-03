@@ -37,7 +37,7 @@ res = lib.getDistance(byref(pos1), byref(pos2))
 print('The distance between pos1 and pos2 is {}'.format(res))
 
 # let the C library create the object and use void pointers to 
-# pass the object around
+# pass the object around. Note the functions return void (None)
 handle = c_void_p()
 lib.createPosition.restype = None
 lib.createPosition.argtypes = [POINTER(c_void_p)]
