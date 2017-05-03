@@ -44,13 +44,10 @@
  */
 double getDistance(const struct Position* pos1,
 	               const struct Position* pos2) {
-	double dx, dy, res;
+	double dx, dy;
 	dx = pos2->x - pos1->x;
 	dy = pos2->y - pos1->y;
-	printf("*** pos1 = %lf %lf pos2 = %lf %lf\n", pos1->x, pos1->y, pos2->x, pos2->y);
-	res = sqrt(dx*dx + dy*dy);
-	printf("*** res = %lf\n", res);
-	return res;
+	return sqrt(dx*dx + dy*dy);
 }
 
 /**

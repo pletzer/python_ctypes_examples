@@ -25,17 +25,16 @@ ier = lib.getSum(len(arr), arrPtr, byref(res))
 
 # create the Position struct object on the Python side and populate it
 class Position(Structure):
-	_fields = [("x", c_double),
-		       ("y", c_double)]
+	_fields_ = [("x", c_double),
+		        ("y", c_double)]
 pos1 = Position(x=1., y=2.)
 pos2 = Position(x=1., y=3.)
-print pos1
-print pos1.x, pos1.y
-lib.getSum.restype = c_double
-lib.argtypes = [POINTER(Position), POINTER(Position)]
+print('pos1: {} {}'.format(pos1.x, pos1.y))
+print('pos2: {} {}'.format(pos2.x, pos2.y))
+lib.getDistance.restype = c_double
+lib.getDistance.argtypes = [POINTER(Position), POINTER(Position)]
 res = lib.getDistance(byref(pos1), byref(pos2))
 print('The distance between pos1 and pos2 is {}'.format(res))
-print pos1.x, pos1.y
 
 # let the C library create the object and use void pointers to 
 # pass the object around
