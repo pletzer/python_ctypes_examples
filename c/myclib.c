@@ -1,5 +1,5 @@
 /**
- * Example of a C API callable from Python
+ * Example of a C API that is callable from Python
  * A. Pletzer NeSI/NIWA
  */
 #include <stdio.h>
@@ -51,7 +51,8 @@ double getDistance(const struct Position* pos1,
 }
 
 /**
- * Object oriented C API
+ * Object oriented C API. it contains a constructor, a setter, 
+ * a print object method and a destructor
  */
 void createPosition(struct Position** self) {
 	*self = malloc(sizeof(struct Position));
